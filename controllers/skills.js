@@ -2,7 +2,7 @@ const Skill = require('../models/skill')
 
 module.exports = {
     index,
-    
+    show
 };
 
 
@@ -11,4 +11,8 @@ function index(req, res) {
         skills: Skill.getAll(),
         title: "Developer Skills:"
     });
+}
+
+function show(req, res) {
+
 }
