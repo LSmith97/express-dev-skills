@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title%></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-    <h1>Skills</h1>
+    <h1><%= title%></h1>
+    <% skills.forEach(function(skill){%>
+        <h3><%= skill.skill %></h3>
+        <ul>
+            <% skill.proficiencies.forEach(function(proficiency){%>
+                <li><%= proficiency %></li>
+            <%}); %>
+        </ul>
+    <%});%>
 </body>
 </html>
