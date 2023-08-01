@@ -9,7 +9,7 @@
 <body>
     <h1><%= title%></h1>
     <% skills.forEach(function(skill){%>
-        <h3><a href="skills/ <%=skill.skill %>"><%= skill.skill %></a></h3>
+        <h3><a href="skills/<%=skill.skill%>"><%= skill.skill %></a></h3>
         <ul>
             <% skill.proficiencies.forEach(function(proficiency){%>
                 <li><%= proficiency %></li>
