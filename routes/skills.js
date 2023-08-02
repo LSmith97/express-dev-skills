@@ -6,6 +6,8 @@ var skillsCtrl = require('../controllers/skills');
 /* GET users listing. */
 router.get('/', skillsCtrl.index);
 router.get('/:id', skillsCtrl.show);
-router.get('/:id/new', skillsCtrl.newSkill);
+router.get('/:id/new', skillsCtrl.newProf);
+
+router.post('/:id', skillsCtrl.createProf);
 
 module.exports = router;

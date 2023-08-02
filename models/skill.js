@@ -9,6 +9,7 @@ const Skills = [
 module.exports = {
     getAll,
     getOne,
+    createProf,
 }
 
 function getAll() {
@@ -17,4 +18,9 @@ function getAll() {
 
 function getOne(id){
     return Skills.find(skill => skill.skill === id);
+}
+
+function createProf(id, data){
+    const idx = Skills.findIndex(skill => skill.skill === id)
+    Skills[idx].proficiencies.push(data.skill);
 }

@@ -1,28 +1,35 @@
-const Skills = require('../models/skill')
+const Skill = require('../models/skill')
 
 module.exports = {
     index,
     show,
-    newSkill,
+    newProf,
+    createProf,
 };
 
 
 function index(req, res) {
     res.render('skills/index', {
-        skills: Skills.getAll(),
+        skills: Skill.getAll(),
         title: "Developer Skills:"
     });
 }
 
 function show(req, res) {
     res.render('skills/show', {
-        skill: Skills.getOne(req.params.id),
-        title: Skills.getOne(req.params.id).skill,
+        skill: Skill.getOne(req.params.id),
+        title: Skill.getOne(req.params.id).skill,
     });
 }
 
-function newSkill(req, res) {
+function newProf(req, res) {
     res.render('skills/new', {
-        title: 'New Skill',
+        skill: Skill.getOne(req.params.id),
+        title: `New ${req.params.id} Skill`,
     });
 }
+
+function createProf(req, res){
+    Skill.createProf(req.params.id, req.body);
+    res.redirect('/skills');
+  }
