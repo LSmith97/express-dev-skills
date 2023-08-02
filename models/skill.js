@@ -10,6 +10,7 @@ module.exports = {
     getAll,
     getOne,
     createProf,
+    deleteProf,
 }
 
 function getAll() {
@@ -21,6 +22,11 @@ function getOne(id){
 }
 
 function createProf(id, data){
-    const idx = Skills.findIndex(skill => skill.skill === id)
+    const idx = Skills.findIndex(skill => skill.skill === id);
     Skills[idx].proficiencies.push(data.skill);
+}
+
+function deleteProf(id, index){
+    const skillIdx = Skills.findIndex(skill => skill.skill === id);
+    Skills[skillIdx].proficiencies.splice(index, 1);
 }

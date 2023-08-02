@@ -5,6 +5,7 @@ module.exports = {
     show,
     newProf,
     createProf,
+    deleteProf,
 };
 
 
@@ -32,4 +33,9 @@ function newProf(req, res) {
 function createProf(req, res){
     Skill.createProf(req.params.id, req.body);
     res.redirect('/skills');
-  }
+}
+
+function deleteProf(req, res){
+    Skill.deleteProf(req.params.id, req.params.index)
+    res.redirect(`/skills/${req.params.id}`)
+}

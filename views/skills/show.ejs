@@ -1,10 +1,17 @@
 <%- include('../partials/header') %>
 
     <h1><%=skill.skill%> Skills:</h1>
+    <a href="/skills/<%=skill.skill%>/new">Add skill</a>
     <ul>
-        <% skill.proficiencies.forEach(function(proficiency){%>
-            <li><%= proficiency %></li>
-        <%}); %>
+        <% for(let i =0; i< skill.proficiencies.length; i++){%>
+            <% let proficiency = skill.proficiencies[i] %>
+            <li><%= proficiency %> 
+                <form action="/skills/<%=skill.skill%>/<%=i%>/?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">Delete Skill</button>
+              </form>
+            </li>
+        <%}%>
     </ul>
-    
+
 <%- include('../partials/footer') %>

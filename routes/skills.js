@@ -10,4 +10,6 @@ router.get('/:id/new', skillsCtrl.newProf);
 
 router.post('/:id', skillsCtrl.createProf);
 
+router.delete('/:id/:index', skillsCtrl.deleteProf);
+
 module.exports = router;
