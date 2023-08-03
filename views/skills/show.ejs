@@ -5,10 +5,10 @@
     <ul>
         <% for(let i =0; i< skill.proficiencies.length; i++){%>
             <% let proficiency = skill.proficiencies[i] %>
-            <li><%= proficiency %> 
+            <li><%= proficiency %> - <a href="/skills/<%=skill.skill%>/<%=i%>/edit">Edit</a>
                 <form action="/skills/<%=skill.skill%>/<%=i%>/?_method=DELETE"
                 class="delete-form" method="POST">
-                <button type="submit">Delete Skill</button>
+                <button type="submit">Delete</button>
               </form>
             </li>
         <%}%>
